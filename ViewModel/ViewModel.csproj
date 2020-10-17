@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Catel.MVVM" Version="5.12.10" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\ActReport.Persistence\ActReport.Persistence.csproj" />
+	</ItemGroup>
+
+</Project>
