@@ -5,13 +5,14 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Button Height="30" Command="{Binding CmdSaveChanges}">Änderung speichern</Button>
         <UniformGrid Grid.Row="1" Rows="2" Columns="2">
             <TextBlock>Vorname:</TextBlock>
-            <TextBox Text="{Binding FirstName}"></TextBox>
+            <TextBox x:Name="tbxFirstName" Text="{Binding FirstName}" LostFocus="TbxFirstName_LostFocus"/>
             <TextBlock>Nachname:</TextBlock>
-            <TextBox Text="{Binding LastName}"></TextBox>
+            <TextBox x:Name="txbLastName" Text="{Binding LastName}" LostFocus="TbxLastName_LostFocus"/>
         </UniformGrid>
         <ListView SelectedItem="{Binding SelectedEmployee}" Grid.Row="2" ItemsSource="{Binding Employees}">
             <ListView.View>
@@ -21,5 +22,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Height="30" Grid.Row="3" Margin="200,0,200,0">Mitarbeiter einfügen</Button>
     </Grid>
 </Window>

@@ -1,11 +1,7 @@
-﻿using ActReport.Core.Contracts;
-using ActReport.Core.Entities;
+﻿using ActReport.Core.Entities;
 using ActReport.Persistence;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Windows.Input;
 
 namespace ViewModel
@@ -88,8 +84,10 @@ namespace ViewModel
                         execute: _ =>
                         {
                             using UnitOfWork uow = new UnitOfWork();
+
                             _selectedEmployee.FirstName = _firstName;
                             _selectedEmployee.LastName = _lastName;
+
                             uow.EmployeeRepository.Update(_selectedEmployee);
                             uow.Save();
 
